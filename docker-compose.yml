@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: "bundle exec hanami server --host 0.0.0.0 -p 2300"
+    volumes:
+      - .:/app
+      - ./containers/bundle_install:/app/vendor/bundle
+      - ./containers/bundle:/app/.bundle
+      - ./containers/node_modules:/app/node_modules
+    ports:
+      - 2300:2300

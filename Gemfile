@@ -5,6 +5,7 @@ gem 'hanami',       '~> 1.3'
 gem 'hanami-model', '~> 1.3'
 
 gem 'sqlite3'
+gem 'web-console', '3.5.0'
 
 group :development do
   # Code reloading
