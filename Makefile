@@ -5,3 +5,6 @@ init:
 
 up:
 	docker-compose up
+
+initdb:
+	docker-compose run app bundle exec hanami db prepare HANAMI_ENV=test
