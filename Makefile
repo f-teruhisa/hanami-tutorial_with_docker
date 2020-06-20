@@ -6,8 +6,14 @@ init:
 up:
 	docker-compose up
 
-initdb:
+preparedb:
+	docker-compose run app bundle exec hanami db prepare
+
+preparetestdb:
 	docker-compose run app bundle exec hanami db prepare HANAMI_ENV=test
+
+console:
+	docker-compose run app bundle exec hanami console
 
 rake:
 	docker-compose run app bundle exec rake
