@@ -1,6 +1,6 @@
 require 'features_helper'
 
-RSpec.desctribe 'Add a book' do
+RSpec.describe 'Add a book' do
   after do
     BookRepository.new.clear
   end
@@ -9,13 +9,13 @@ RSpec.desctribe 'Add a book' do
     visit '/books/new'
 
     within 'form#book-form' do
-      fill_in 'Title', with: 'New Book'
+      fill_in 'Title',  with: 'New book'
       fill_in 'Author', with: 'Some author'
 
       click_button 'Create'
     end
 
     expect(page).to have_current_path('/books')
-    expect(page).to have_current('New book')
+    expect(page).to have_content('New book')
   end
 end
