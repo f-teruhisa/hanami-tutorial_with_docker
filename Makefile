@@ -17,3 +17,6 @@ console:
 
 rake:
 	docker-compose run app bundle exec rake
+
+routes:
+	docker-compose run app bundle exec hanami routes
